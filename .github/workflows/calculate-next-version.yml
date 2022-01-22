@@ -1,0 +1,23 @@
+name: Calculate Next Version
+on:
+  workflow_call:
+    outputs:
+      version:
+        description: "The next version formatted to use with release-drafter"
+        value: ${{ format('{0}', jobs.calculate_next_version.outputs.version) }}
+      version-unformatted:
+        description: "The next version"
+        value: ${{ jobs.calculate_next_version.outputs.version }}
+        
+jobs:
+  calculate_next_version:
+    name: Calculate next release version
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.next-version }}
+    steps:
+      - name: Run version drafter
+        id: version
+        uses: patrickjahns/version-drafter-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
