@@ -1,0 +1,39 @@
+name: Update Changelog
+on:
+  workflow_call:
+    inputs:
+      ref:
+        description: 'The branch ref to work on.'
+        required: true
+        type: string
+      exclude-labels:
+        description: 'Labels of issues and PRs that should be excluded from the changelog.'
+        default: 'duplicate,question,invalid,wontfix,skip-changelog'
+        type: string
+      test-command:
+        description: 'The command to run for executing tests'
+        default: 'composer ci-all'
+        type: string
+
+
+jobs:
+  update_changelog:
+    name: Update changelog
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: ${{inputs.ref}}
+          
+      - name: create changelog
+        uses: charmixer/auto-changelog-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          exclude_labels: ${{inputs.exclude-labels}}
+
+      - name: commit updated changelog
+        uses: EndBug/add-and-commit@v8
+        with:
+          message: "[CHANGELOG] Updated changelog"
+          add: "CHANGELOG.md"
