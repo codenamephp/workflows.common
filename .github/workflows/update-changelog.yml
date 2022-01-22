@@ -10,9 +10,13 @@ on:
         description: 'Labels of issues and PRs that should be excluded from the changelog.'
         default: 'duplicate,question,invalid,wontfix,skip-changelog'
         type: string
-      test-command:
-        description: 'The command to run for executing tests'
-        default: 'composer ci-all'
+      future-release:
+        description: 'The version of the future release instead of "unreleased" section'
+        default: ''
+        type: string
+      release-branch:
+        description: 'The branch to limit the PRs to'
+        default: ''
         type: string
 
 
@@ -31,7 +35,9 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           exclude_labels: ${{inputs.exclude-labels}}
-
+          future_release: ${{inputs.future-release}}
+          release_branch: ${{inputs.release-branch}}
+          
       - name: commit updated changelog
         uses: EndBug/add-and-commit@v8
         with:
