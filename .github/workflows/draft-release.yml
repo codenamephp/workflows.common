@@ -1,0 +1,21 @@
+name: Draft Release
+on:
+  workflow_call:
+    inputs:
+      version:
+        description: 'The version formatted for release-drafter to use'
+        required: true
+        type: string
+
+  draft_release:
+    name: Create draft release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run release drafter
+        uses: release-drafter/release-drafter@v5
+        with:
+          version: ${{ inputs.version }}
+          tag: ${{ inputs.version }}
+          name: ${{ inputs.version }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
