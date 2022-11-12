@@ -35,7 +35,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           exclude_labels: ${{inputs.exclude-labels}}
-          future_release: ${{ inputs.future-release }} 
+          future_release: ${{inputs.future-release}} 
           release_branch: ${{inputs.release-branch}}
           
       - name: commit updated changelog
