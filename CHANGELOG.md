@@ -1,11 +1,16 @@
 # Changelog
 
-## [0.0.1](https://github.com/codenamephp/workflows.common/tree/0.0.1) (2023-03-11)
+## [1.0.0](https://github.com/codenamephp/workflows.common/tree/1.0.0) (2023-03-11)
 
-[Full Changelog](https://github.com/codenamephp/workflows.common/compare/d93eeaab08ca03dc1dea324d964051b7872b7c9f...0.0.1)
+[Full Changelog](https://github.com/codenamephp/workflows.common/compare/d93eeaab08ca03dc1dea324d964051b7872b7c9f...1.0.0)
+
+**Closed issues:**
+
+- set-output is deprecated [\#5](https://github.com/codenamephp/workflows.common/issues/5)
 
 **Merged pull requests:**
 
+- Initial Release [\#6](https://github.com/codenamephp/workflows.common/pull/6) ([bastianschwarz](https://github.com/bastianschwarz))
 - Update update-changelog.yml [\#4](https://github.com/codenamephp/workflows.common/pull/4) ([bastianschwarz](https://github.com/bastianschwarz))
 - Bump EndBug/add-and-commit from 8 to 9 [\#2](https://github.com/codenamephp/workflows.common/pull/2) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump actions/checkout from 2 to 3 [\#1](https://github.com/codenamephp/workflows.common/pull/1) ([dependabot[bot]](https://github.com/apps/dependabot))
