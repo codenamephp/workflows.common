@@ -1,0 +1,42 @@
+name: Update Release Versions
+
+on:
+  workflow_call:
+    inputs:
+      version:
+        description: "The version that was just released (semver compliant)"
+        required: true
+        type: string
+      release_ref:
+        description: "The ref the release versions should point to"
+        required: true
+        type: string
+
+jobs:
+  parse_version:
+    name: Parse Version
+    runs-on: ubuntu-latest
+    outputs:
+      major: ${{ steps.parse.outputs.major }}
+      minor: ${{ steps.parse.outputs.minor }}
+      patch: ${{ steps.parse.outputs.patch }}
+    steps:
+      - name: Parse version
+        id: parse
+        run: |
+          echo "major=$(echo ${{ github.event.inputs.version }} | cut -d '.' -f 1)" >> $GITHUB_OUTPUT
+          echo "minor=$(echo ${{ github.event.inputs.version }} | cut -d '.' -f 2)" >> $GITHUB_OUTPUT
+          echo "patch=$(echo ${{ github.event.inputs.version }} | cut -d '.' -f 3)" >> $GITHUB_OUTPUT
+
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Update tags
+        run: |
+          MAJOR="${{ steps.parse.outputs.major }}"
+          MINOR="${{ steps.parse.outputs.major }}.${{ steps.parse.outputs.major }}"
+          TARGET="${{ github.event.inputs.release_ref }}"
+          git tag -f $MAJOR $TARGET
+          git tag -f $MINOR $TARGET
+          git push origin $MAJOR $MINOR --force
