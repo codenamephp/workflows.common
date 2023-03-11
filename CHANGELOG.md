@@ -1,16 +1,28 @@
 # Changelog
 
+## [1.1.0](https://github.com/codenamephp/workflows.common/tree/1.1.0) (2023-03-11)
+
+[Full Changelog](https://github.com/codenamephp/workflows.common/compare/1...1.1.0)
+
+**Implemented enhancements:**
+
+- Add outputs [\#8](https://github.com/codenamephp/workflows.common/pull/8) ([bastianschwarz](https://github.com/bastianschwarz))
+
+## [1](https://github.com/codenamephp/workflows.common/tree/1) (2023-03-11)
+
+[Full Changelog](https://github.com/codenamephp/workflows.common/compare/1.0.4...1)
+
 ## [1.0.4](https://github.com/codenamephp/workflows.common/tree/1.0.4) (2023-03-11)
 
-[Full Changelog](https://github.com/codenamephp/workflows.common/compare/1...1.0.4)
+[Full Changelog](https://github.com/codenamephp/workflows.common/compare/1.0...1.0.4)
+
+## [1.0](https://github.com/codenamephp/workflows.common/tree/1.0) (2023-03-11)
+
+[Full Changelog](https://github.com/codenamephp/workflows.common/compare/1.0.3...1.0)
 
 **Fixed bugs:**
 
 - Fixed copy and paste error [\#7](https://github.com/codenamephp/workflows.common/pull/7) ([bastianschwarz](https://github.com/bastianschwarz))
-
-## [1](https://github.com/codenamephp/workflows.common/tree/1) (2023-03-11)
-
-[Full Changelog](https://github.com/codenamephp/workflows.common/compare/1.0.3...1)
 
 ## [1.0.3](https://github.com/codenamephp/workflows.common/tree/1.0.3) (2023-03-11)
 
