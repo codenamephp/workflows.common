@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.1](https://github.com/codenamephp/workflows.common/tree/1.1.1) (2023-03-11)
+
+[Full Changelog](https://github.com/codenamephp/workflows.common/compare/1.1.0...1.1.1)
+
+**Fixed bugs:**
+
+- Outputs don't have types [\#9](https://github.com/codenamephp/workflows.common/pull/9) ([bastianschwarz](https://github.com/bastianschwarz))
+
 ## [1.1.0](https://github.com/codenamephp/workflows.common/tree/1.1.0) (2023-03-11)
 
 [Full Changelog](https://github.com/codenamephp/workflows.common/compare/1...1.1.0)
@@ -18,19 +26,19 @@
 
 ## [1.0](https://github.com/codenamephp/workflows.common/tree/1.0) (2023-03-11)
 
-[Full Changelog](https://github.com/codenamephp/workflows.common/compare/1.0.3...1.0)
+[Full Changelog](https://github.com/codenamephp/workflows.common/compare/1.1...1.0)
 
 **Fixed bugs:**
 
 - Fixed copy and paste error [\#7](https://github.com/codenamephp/workflows.common/pull/7) ([bastianschwarz](https://github.com/bastianschwarz))
 
-## [1.0.3](https://github.com/codenamephp/workflows.common/tree/1.0.3) (2023-03-11)
-
-[Full Changelog](https://github.com/codenamephp/workflows.common/compare/1.1...1.0.3)
-
 ## [1.1](https://github.com/codenamephp/workflows.common/tree/1.1) (2023-03-11)
 
-[Full Changelog](https://github.com/codenamephp/workflows.common/compare/1.0.2...1.1)
+[Full Changelog](https://github.com/codenamephp/workflows.common/compare/1.0.3...1.1)
+
+## [1.0.3](https://github.com/codenamephp/workflows.common/tree/1.0.3) (2023-03-11)
+
+[Full Changelog](https://github.com/codenamephp/workflows.common/compare/1.0.2...1.0.3)
 
 ## [1.0.2](https://github.com/codenamephp/workflows.common/tree/1.0.2) (2023-03-11)
 
