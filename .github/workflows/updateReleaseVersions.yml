@@ -11,15 +11,37 @@ on:
         description: "The ref the release versions should point to"
         required: true
         type: string
-
+    outputs:
+      major:
+        description: "The major version"
+        type: string
+        value: ${{ jobs.update_release_versions.outputs.major }}
+      minor:
+        description: "The minor version"
+        type: string
+        value: ${{ jobs.update_release_versions.outputs.minor }}
+      patch:
+        description: "The patch version"
+        type: string
+        value: ${{ jobs.update_release_versions.outputs.patch }}
+      major_tag:
+        description: "The major tag that was created (the version number, e.g. 1)"
+        type: string
+        value: ${{ jobs.update_release_versions.outputs.major_tag }}
+      minor_tag:
+        description: "The minor tag that was created (the version number, e.g. 1.2)"
+        type: string
+        value: ${{ jobs.update_release_versions.outputs.minor_tag }}
 jobs:
-  parse_version:
-    name: Parse Version
+  update_release_versions:
+    name: Update Release Versions
     runs-on: ubuntu-latest
     outputs:
       major: ${{ steps.parse.outputs.major }}
       minor: ${{ steps.parse.outputs.minor }}
       patch: ${{ steps.parse.outputs.patch }}
+      major_tag: ${{ steps.update.outputs.major }}
+      minor_tag: ${{ steps.update.outputs.minor }}
     steps:
       - name: Parse version
         id: parse
@@ -28,11 +50,13 @@ jobs:
           echo "minor=$(echo ${{ inputs.version }} | cut -d '.' -f 2)" >> $GITHUB_OUTPUT
           echo "patch=$(echo ${{ inputs.version }} | cut -d '.' -f 3)" >> $GITHUB_OUTPUT
 
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
       - name: Update tags
+        id: update
         run: |
           MAJOR="${{ steps.parse.outputs.major }}"
           MINOR="${{ steps.parse.outputs.major }}.${{ steps.parse.outputs.minor }}"
@@ -40,3 +64,5 @@ jobs:
           git tag -f $MAJOR $TARGET
           git tag -f $MINOR $TARGET
           git push origin $MAJOR $MINOR --force
+          echo "major=$MAJOR" >> $GITHUB_OUTPUT
+          echo "minor=$MINOR" >> $GITHUB_OUTPUT
