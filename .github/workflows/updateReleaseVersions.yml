@@ -35,7 +35,7 @@ jobs:
       - name: Update tags
         run: |
           MAJOR="${{ steps.parse.outputs.major }}"
-          MINOR="${{ steps.parse.outputs.major }}.${{ steps.parse.outputs.major }}"
+          MINOR="${{ steps.parse.outputs.major }}.${{ steps.parse.outputs.minor }}"
           TARGET="${{ inputs.release_ref }}"
           git tag -f $MAJOR $TARGET
           git tag -f $MINOR $TARGET
