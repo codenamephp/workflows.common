@@ -14,23 +14,18 @@ on:
     outputs:
       major:
         description: "The major version"
-        type: string
         value: ${{ jobs.update_release_versions.outputs.major }}
       minor:
         description: "The minor version"
-        type: string
         value: ${{ jobs.update_release_versions.outputs.minor }}
       patch:
         description: "The patch version"
-        type: string
         value: ${{ jobs.update_release_versions.outputs.patch }}
       major_tag:
         description: "The major tag that was created (the version number, e.g. 1)"
-        type: string
         value: ${{ jobs.update_release_versions.outputs.major_tag }}
       minor_tag:
         description: "The minor tag that was created (the version number, e.g. 1.2)"
-        type: string
         value: ${{ jobs.update_release_versions.outputs.minor_tag }}
 jobs:
   update_release_versions:
