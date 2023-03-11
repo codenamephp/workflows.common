@@ -1,0 +1,22 @@
+name: Prepare Release
+on:
+  push:
+    branches: [ release ]
+    paths-ignore:
+      - '**.md'
+
+jobs:
+  calculate_next_version:
+    uses: codenamephp/workflows.common/.github/workflows/calculate-next-version.yml@main
+  draft_release:
+    needs: calculate_next_version
+    uses: codenamephp/workflows.common/.github/workflows/draft-release.yml@main
+    with:
+      version: ${{ needs.calculate_next_version.outputs.version }}
+  update_changelog:
+    uses: codenamephp/workflows.common/.github/workflows/update-changelog.yml@main
+    needs: calculate_next_version
+    with:
+      ref: ${{github.ref_name}}
+      future-release: ${{ needs.calculate_next_version.outputs.version }}
+      release-branch: 'release'
