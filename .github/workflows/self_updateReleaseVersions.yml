@@ -10,4 +10,4 @@ jobs:
     uses: codenamephp/workflows.common/.github/workflows/updateReleaseVersions.yml@release
     with:
       version: ${{ github.event.release.tag_name }}
-      release_ref: ${GITHUB_REF}
+      release_ref: ${{ github.ref_name }}
