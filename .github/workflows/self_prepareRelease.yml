@@ -7,14 +7,14 @@ on:
 
 jobs:
   calculate_next_version:
-    uses: codenamephp/workflows.common/.github/workflows/calculate-next-version.yml@main
+    uses: codenamephp/workflows.common/.github/workflows/calculate-next-version.yml@release
   draft_release:
     needs: calculate_next_version
-    uses: codenamephp/workflows.common/.github/workflows/draft-release.yml@main
+    uses: codenamephp/workflows.common/.github/workflows/draft-release.yml@release
     with:
       version: ${{ needs.calculate_next_version.outputs.version }}
   update_changelog:
-    uses: codenamephp/workflows.common/.github/workflows/update-changelog.yml@main
+    uses: codenamephp/workflows.common/.github/workflows/update-changelog.yml@release
     needs: calculate_next_version
     with:
       ref: ${{github.ref_name}}
