@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.1](https://github.com/codenamephp/workflows.common/tree/1.0.1) (2023-03-11)
+
+[Full Changelog](https://github.com/codenamephp/workflows.common/compare/1.0.0...1.0.1)
+
 ## [1.0.0](https://github.com/codenamephp/workflows.common/tree/1.0.0) (2023-03-11)
 
 [Full Changelog](https://github.com/codenamephp/workflows.common/compare/d93eeaab08ca03dc1dea324d964051b7872b7c9f...1.0.0)
