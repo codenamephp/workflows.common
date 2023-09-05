@@ -1,12 +1,12 @@
 # Changelog
 
-## [1.1.2](https://github.com/codenamephp/workflows.common/tree/1.1.2) (2023-03-11)
+## [1.1.3](https://github.com/codenamephp/workflows.common/tree/1.1.3) (2023-09-05)
 
-[Full Changelog](https://github.com/codenamephp/workflows.common/compare/1...1.1.2)
+[Full Changelog](https://github.com/codenamephp/workflows.common/compare/1...1.1.3)
 
-**Fixed bugs:**
+**Merged pull requests:**
 
-- Use Ref not Ref Name [\#10](https://github.com/codenamephp/workflows.common/pull/10) ([bastianschwarz](https://github.com/bastianschwarz))
+- Bump actions/checkout from 3 to 4 [\#11](https://github.com/codenamephp/workflows.common/pull/11) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [1](https://github.com/codenamephp/workflows.common/tree/1) (2023-03-11)
 
@@ -14,7 +14,15 @@
 
 ## [1.1](https://github.com/codenamephp/workflows.common/tree/1.1) (2023-03-11)
 
-[Full Changelog](https://github.com/codenamephp/workflows.common/compare/1.1.1...1.1)
+[Full Changelog](https://github.com/codenamephp/workflows.common/compare/1.1.2...1.1)
+
+## [1.1.2](https://github.com/codenamephp/workflows.common/tree/1.1.2) (2023-03-11)
+
+[Full Changelog](https://github.com/codenamephp/workflows.common/compare/1.1.1...1.1.2)
+
+**Fixed bugs:**
+
+- Use Ref not Ref Name [\#10](https://github.com/codenamephp/workflows.common/pull/10) ([bastianschwarz](https://github.com/bastianschwarz))
 
 ## [1.1.1](https://github.com/codenamephp/workflows.common/tree/1.1.1) (2023-03-11)
 
