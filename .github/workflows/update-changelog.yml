@@ -39,7 +39,7 @@ jobs:
           release_branch: ${{inputs.release-branch}}
           
       - name: commit updated changelog
-        uses: EndBug/add-and-commit@v10
+        uses: EndBug/add-and-commit@v11
         with:
           message: "[CHANGELOG] Updated changelog"
           add: "CHANGELOG.md"
